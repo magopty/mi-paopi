@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Centrado con Fondo de Imágenes</title>
+    <a href="index.html"></a>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .background-images {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            z-index: -1;
+        }
+        
+        .left-image, .right-image {
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.7;
+        }
+        
+        .left-image {
+            background-image: url('https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        }
+        
+        .right-image {
+            background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        }
+        
+        .video-container {
+            width: 70%;
+            max-width: 800px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .text-block {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 25px;
+            border-radius: 8px;
+            max-width: 800px;
+            width: 70%;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .text-block h2 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .text-block p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+        
+        @media (max-width: 768px) {
+            .video-container, .text-block {
+                width: 90%;
+            }
+            
+            .background-images {
+                flex-direction: column;
+            }
+            
+            .left-image, .right-image {
+                flex: none;
+                height: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="background-images">
+            <div class="left-image"></div>
+            <div class="right-image"></div>
+        </div>
+        
+        <div class="video-container">
+            <video controls>
+                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+        </div>
+        
+        <div class="text-block">
+            <h2>Una Frase Inspiradora</h2>
+            <p>"La creatividad es la inteligencia divirtiéndose" - Albert Einstein</p>
+        </div>
+    </div>
+</body>
+</html>
