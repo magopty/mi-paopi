@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para mi paopi</title>
-    <a href="index.html"></a>
     <style>
         * {
             margin: 0;
@@ -64,10 +63,20 @@
             overflow: hidden;
         }
         
-        video {
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: auto;
-            display: block;
+            height: 100%;
+            border: none;
         }
         
         .text-block {
@@ -114,10 +123,9 @@
         </div>
         
         <div class="video-container">
-            <video controls>
+            <div class="video-wrapper">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/AUXoP66IATo?si=kapR_8Vdeq9_FKub" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                Tu navegador no soporta el elemento de video.
-            </video>
+            </div>
         </div>
         
         <div class="text-block">
